@@ -31,7 +31,7 @@ public class Entrega implements Serializable {
 	@JsonFormat(pattern="yyyy-MM-dd")
 	private LocalDate data;
 	
-	@Column(name="url_git", nullable = false, length = 128)
+	@Column(name="url_git", nullable = false, length = 256)
 	private String urlGit;
 	
 	@Column(name="observacao", nullable = true, length = 128)
