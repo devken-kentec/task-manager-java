@@ -24,6 +24,16 @@ public class LancamentoController {
 		return ls.listarTodos();
 	}
 	
+	@GetMapping("/todosLanc")
+	public Iterable<Lancamento> listarTodosLancamento(){
+		return ls.listarTodosLancamento();
+	}
+	
+	@GetMapping("/paraLanc")
+	public Iterable<Lancamento> listarParaLancar(){
+		return ls.listarParaLancar();
+	}
+	
 	@PostMapping()
 	@ResponseStatus(HttpStatus.CREATED)
 	public void gravarLancamento(@RequestBody Iterable<LancamentoDTO> lancamentoDTO) {

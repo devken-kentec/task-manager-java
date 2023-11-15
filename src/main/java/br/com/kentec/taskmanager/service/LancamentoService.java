@@ -49,6 +49,14 @@ public class LancamentoService {
 		return lr.findAll();
 	}
 	
+	public Iterable<Lancamento> listarTodosLancamento() {
+		return lr.listarTodosLancamento();
+	}
+	
+	public Iterable<Lancamento> listarParaLancar() {
+		return lr.listarParaLancamento();
+	}
+	
 	public void gravarLancamento(Iterable<LancamentoDTO> lancamentoDTO) {
 		List<Lancamento> lancList = new ArrayList<>();
 		for (LancamentoDTO lancamentoDTO2 : lancamentoDTO) {
