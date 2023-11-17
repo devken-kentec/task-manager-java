@@ -3,10 +3,12 @@ package br.com.kentec.taskmanager.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import br.com.kentec.taskmanager.DTO.LancamentoDTO;
+import br.com.kentec.taskmanager.DTO.LancamentoEntregaDTO;
 import br.com.kentec.taskmanager.domain.Atividade;
 import br.com.kentec.taskmanager.domain.Entrega;
 import br.com.kentec.taskmanager.domain.Lancamento;
@@ -55,6 +57,10 @@ public class LancamentoService {
 	
 	public Iterable<Lancamento> listarParaLancar() {
 		return lr.listarParaLancamento();
+	}
+	
+	public List<LancamentoEntregaDTO> listarParaLancarAtividade(String codigo) {
+		return lr.listarParaLancamentoAtividade(codigo).stream().map(LancamentoEntregaDTO::new).collect(Collectors.toList());
 	}
 	
 	public void gravarLancamento(Iterable<LancamentoDTO> lancamentoDTO) {
