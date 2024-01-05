@@ -12,6 +12,7 @@ public class LancamentoEntregaDTO {
 	 private String status;
 	 private Integer tarefa;
 	 private BigDecimal valor;
+	 private String obs;
 	 
 	 public LancamentoEntregaDTO(Lancamento lanc) {
 		 this.codigo = lanc.getAtividade().getCodigo();
@@ -21,6 +22,7 @@ public class LancamentoEntregaDTO {
 		 this.status = lanc.getStatus().toString();
 		 this.tarefa = lanc.getTarefa().getNumero();
 		 this.valor = lanc.getAtividade().getValor();
+		 this.obs = lanc.getEntrega().getObservacao();
 	 }
 
 	public String getCodigo() {
@@ -79,10 +81,19 @@ public class LancamentoEntregaDTO {
 		this.valor = valor;
 	}
 
+	public String getObs() {
+		return obs;
+	}
+
+	public void setObs(String obs) {
+		this.obs = obs;
+	}
+
 	@Override
 	public String toString() {
 		return "LancamentoEntregaDTO [codigo=" + codigo + ", descricao=" + descricao + ", arquivoGit=" + arquivoGit
-				+ ", hash=" + hash + ", status=" + status + ", tarefa=" + tarefa + ", valor=" + valor + "]";
+				+ ", hash=" + hash + ", status=" + status + ", tarefa=" + tarefa + ", valor=" + valor + ", obs=" + obs
+				+ "]";
 	}
 	 
 }
