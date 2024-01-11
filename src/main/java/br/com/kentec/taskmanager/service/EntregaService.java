@@ -41,7 +41,7 @@ public class EntregaService {
 	}
 	
 	public Iterable<EntregaDTO> listarEntregas() {
-		return er.findAll().stream().map(EntregaDTO::new).collect(Collectors.toList());
+		return er.listarTodasEntregas().stream().map(EntregaDTO::new).collect(Collectors.toList());
 	}
 
 	public void gravarEntrega(EntregaDTO entregaDTO) {
